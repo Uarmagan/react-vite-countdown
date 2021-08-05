@@ -18,7 +18,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h2>We're Launching Soon</h2>
-        <p>countdown</p>
         <div className="countdown">
           <$CountdownWrapper>
             <div className="days">
@@ -26,15 +25,15 @@ function App() {
               <p>{timeLeft.days}</p>
             </div>
             <div className="hours">
-              <p>Days</p>
+              <p>Hours</p>
               <p>{timeLeft.hours}</p>
             </div>
             <div className="minutes">
-              <p>Days</p>
+              <p>Minutes</p>
               <p>{timeLeft.minutes}</p>
             </div>
             <div className="seconds">
-              <p>Days</p>
+              <p>Seconds</p>
               <p>{timeLeft.seconds}</p>
             </div>
           </$CountdownWrapper>
