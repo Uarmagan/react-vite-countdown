@@ -2,18 +2,10 @@ import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import styled from "styled-components";
-import { ITimeLeft } from "./types";
+import { useCountdown } from "./hooks/countdown";
 
 function App() {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, [timeLeft]);
-
+  const timeLeft = useCountdown();
   return (
     <div className="App">
       <header className="App-header">
@@ -42,27 +34,6 @@ function App() {
     </div>
   );
 }
-
-const calculateTimeLeft = (): ITimeLeft => {
-  let year = new Date().getFullYear();
-  const difference: number = +new Date(`10/01/${year}`) - +new Date();
-
-  if (difference > 0) {
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-  }
-
-  return {
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  };
-};
 
 const $CountdownWrapper = styled.div`
   display: flex;
