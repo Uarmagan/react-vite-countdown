@@ -1,12 +1,12 @@
 import React from "react";
-import styled from "styled-components";
 import { useCountdown } from "../hooks/countdown";
-
+import { createTheme, style } from "@vanilla-extract/css";
+import { CountdownWrapper } from "./countdown.css";
 export const Countdown = () => {
   const timeLeft = useCountdown();
   return (
     <>
-      <$CountdownWrapper>
+      <div className={CountdownWrapper}>
         <div className="days">
           <p>Days</p>
           <p>{timeLeft.days}</p>
@@ -23,13 +23,7 @@ export const Countdown = () => {
           <p>Seconds</p>
           <p>{timeLeft.seconds}</p>
         </div>
-      </$CountdownWrapper>
+      </div>
     </>
   );
 };
-
-const $CountdownWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 500px;
-`;
