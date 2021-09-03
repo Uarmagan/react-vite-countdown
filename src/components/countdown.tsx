@@ -32,4 +32,5 @@ const $CountdownWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   width: 500px;
+  
 `;
