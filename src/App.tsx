@@ -10,14 +10,6 @@ function App() {
       <$wrapper>
         <h2>We're Launching Soon</h2>
         <Countdown />
-        <div className="attribution">
-          Challenge by{" "}
-          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-            Frontend Mentor
-          </a>
-          . Made with love by{" "}
-          <a href="https://github.com/uarmagan">Ugur Armagan</a>.
-        </div>
         <$bgStars />
         <$styledHills />
       </$wrapper>
@@ -27,7 +19,22 @@ function App() {
 
 const $wrapper = styled.div`
   color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 600px;
+  /* align-content: flex-start; */
+  align-items: center;
+  text-transform: uppercase;
+
+  h2 {
+    font-size: 1.3em;
+    letter-spacing: 0.3em;
+    margin-bottom: 128px;
+    color: var(--color-white);
+  }
 `;
+
 const $styledHills = styled(hills)`
   width: 100vw;
   position: absolute;

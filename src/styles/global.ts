@@ -25,7 +25,6 @@ export const GlobalStyles = createGlobalStyle`
         --color-dark-desaturated-blue:${COLORS.neutral.darkDesaturatedBlue};
         --color-very-dark-blue:${COLORS.neutral.VeryDarkBlue};
         
-        
         .App {
             background: rgb(25,26,36);
             background: linear-gradient(180deg, ${VeryDarkBlue} 0%, ${darkBlue} 50%, ${darkDesaturatedBlue} 100%);
