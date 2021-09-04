@@ -1,28 +1,24 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { useCountdown } from "../hooks/countdown";
+import TimeUnit from "./timeUnit";
 
 export const Countdown = () => {
-  const timeLeft = useCountdown();
+  const { days, hours, minutes, seconds } = useCountdown();
+  // const countdownNumberEl = useRef(null);
   return (
     <>
       <$CountdownWrapper>
-        <div className="days">
-          <p>{timeLeft.days}</p>
-          <p>Days</p>
-        </div>
-        <div className="hours">
-          <p>{timeLeft.hours}</p>
-          <p>Hours</p>
-        </div>
-        <div className="minutes">
-          <p>{timeLeft.minutes}</p>
-          <p>Minutes</p>
-        </div>
-        <div className="seconds">
-          <p>{timeLeft.seconds}</p>
-          <p>Seconds</p>
-        </div>
+        <TimeUnit unitNumber={days} unitName="Days" />
+        <TimeUnit unitNumber={hours} unitName="Hours" />
+        <TimeUnit unitNumber={minutes} unitName="Minutes" />
+        <TimeUnit unitNumber={seconds} unitName="seconds" />
+        {/* <$CircleWrapper>
+          <div className="count">21</div>
+          <svg>
+            <circle r="18" cx="20" cy="20"></circle>
+          </svg>
+        </$CircleWrapper> */}
       </$CountdownWrapper>
     </>
   );
@@ -34,3 +30,4 @@ const $CountdownWrapper = styled.div`
   width: 500px;
   color: var(--color-white);
 `;
+
