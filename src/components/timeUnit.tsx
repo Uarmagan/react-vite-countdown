@@ -11,7 +11,7 @@ function TimeUnit(props: TimeUnitProps) {
     <$CircleWrapper>
       <p>{props.unitNumber}</p>
       <p>{props.unitName}</p>
-      <$CircleSVG>
+      <$CircleSVG duration={props.unitNumber}>
         <svg>
           <circle r="18" cx="20" cy="20"></circle>
         </svg>
@@ -33,8 +33,10 @@ const CountdownAnimation = keyframes`
       stroke-dashoffset: 113px;
     }
 `;
-
-const $CircleSVG = styled.div`
+type circlePropType = {
+  duration: number;
+};
+const $CircleSVG = styled.div<circlePropType>`
   svg {
     position: absolute;
     top: 0;
@@ -52,7 +54,7 @@ const $CircleSVG = styled.div`
     fill: none;
     /* animation: countdown 10s linear infinite forwards; */
     animation-name: ${CountdownAnimation};
-    animation-duration: 10s;
+    animation-duration: ${(props) => props.duration}s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
