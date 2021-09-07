@@ -36,6 +36,13 @@ const $CircleSVG = styled.div`
     transform: rotateY(-180deg) rotateZ(-90deg);
   }
   svg circle {
+    stroke-dasharray: 113px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 2px;
+    stroke: white;
+    fill: none;
+    animation: countdown 10s linear infinite forwards;
   }
   @keyframes countdown {
     from {
@@ -46,7 +53,6 @@ const $CircleSVG = styled.div`
     }
   }
 `;
-const $StyledCircle = styled.circle``;
 const $CircleWrapper = styled.div`
   position: relative;
   margin: auto;
@@ -55,9 +61,7 @@ const $CircleWrapper = styled.div`
   width: 40px;
   text-align: center;
 `;
-const count = styled.div`
-  color: white;
-  display: inline-block;
+const $count = styled.div`
   line-height: 40px;
 `;
 

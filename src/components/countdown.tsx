@@ -30,4 +30,3 @@ const $CountdownWrapper = styled.div`
   width: 500px;
   color: var(--color-white);
 `;
-
