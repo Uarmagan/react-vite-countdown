@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 interface TimeUnitProps {
   unitNumber: number;
@@ -25,6 +25,14 @@ function TimeUnit(props: TimeUnitProps) {
 //   flex-direction: column;
 //   align-items: center;
 // `;
+const CountdownAnimation = keyframes`
+  from {
+      stroke-dashoffset: 0px;
+    }
+    to {
+      stroke-dashoffset: 113px;
+    }
+`;
 
 const $CircleSVG = styled.div`
   svg {
@@ -42,17 +50,15 @@ const $CircleSVG = styled.div`
     stroke-width: 2px;
     stroke: white;
     fill: none;
-    animation: countdown 10s linear infinite forwards;
-  }
-  @keyframes countdown {
-    from {
-      stroke-dashoffset: 0px;
-    }
-    to {
-      stroke-dashoffset: 113px;
-    }
+    /* animation: countdown 10s linear infinite forwards; */
+    animation-name: ${CountdownAnimation};
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
   }
 `;
+
 const $CircleWrapper = styled.div`
   position: relative;
   margin: auto;
