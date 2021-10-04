@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Countdown } from "./components/countdown";
-import styled from "styled-components";
-import { ReactComponent as hills } from "./assets/pattern-hills.svg";
-import { ReactComponent as bgStars } from "./assets/bg-stars.svg";
+import React, { useEffect, useState } from 'react';
+import { Countdown } from './components/countdown';
+import styled from 'styled-components';
+import { ReactComponent as hills } from './assets/pattern-hills.svg';
+import { ReactComponent as bgStars } from './assets/bg-stars.svg';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <$wrapper>
         <h2>We're Launching Soon</h2>
         <Countdown />
@@ -21,14 +21,13 @@ const $wrapper = styled.div`
   color: grey;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   height: 600px;
-  /* align-content: flex-start; */
+  align-content: flex-start;
   align-items: center;
   text-transform: uppercase;
 
   h2 {
-    font-size: 1.3em;
+    font-size: 1.4em;
     letter-spacing: 0.3em;
     margin-bottom: 128px;
     color: var(--color-white);
