@@ -11,10 +11,13 @@ const renderTime = (name: string, time: number) => {
   );
 };
 
-export const Countdown = () => {
+export const Countdown = ({ endDate }: { endDate: string }) => {
+  console.log(endDate);
   const startTime = Date.now() / 1000; // use UNIX timestamp in seconds
-  const endTime = startTime + 843248; // use UNIX timestamp in seconds
+  const endTime = new Date(endDate).getTime() / 1000;
+  console.log(endTime);
 
+  // convert date time iso string to unix timestamp
   const remainingTime = endTime - startTime;
   const days = Math.ceil(remainingTime / daySeconds);
   const daysDuration = days * daySeconds;
@@ -31,7 +34,7 @@ export const Countdown = () => {
         {...timerProps}
         // @ts-ignore:next-line
         colors={[['#FF5F6D'], ['#FFC371']]}
-        trailColor="#1D1E28"
+        trailColor='#1D1E28'
         isLinearGradient={true}
         duration={daysDuration}
         initialRemainingTime={remainingTime}
@@ -44,7 +47,7 @@ export const Countdown = () => {
         {...timerProps}
         // @ts-ignore:next-line
         colors={[['#FF5F6D'], ['#FFC371']]}
-        trailColor="#1D1E28"
+        trailColor='#1D1E28'
         isLinearGradient={true}
         duration={daySeconds}
         initialRemainingTime={remainingTime % daySeconds}
@@ -61,7 +64,7 @@ export const Countdown = () => {
         {...timerProps}
         // @ts-ignore:next-line
         colors={[['#FF5F6D'], ['#FFC371']]}
-        trailColor="#1D1E28"
+        trailColor='#1D1E28'
         isLinearGradient={true}
         duration={hourSeconds}
         initialRemainingTime={remainingTime % hourSeconds}
@@ -81,7 +84,7 @@ export const Countdown = () => {
         {...timerProps}
         // @ts-ignore:next-line
         colors={[['#FF5F6D'], ['#FFC371']]}
-        trailColor="#1D1E28"
+        trailColor='#1D1E28'
         isLinearGradient={true}
         duration={minuteSeconds}
         initialRemainingTime={remainingTime % minuteSeconds}
@@ -120,6 +123,6 @@ const $CountdownCircle = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 1.2em;
-  color:white;
+  color: white;
   line-height: 1.3;
 `;
