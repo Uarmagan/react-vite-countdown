@@ -4,10 +4,10 @@ This application is built using React, Styled Components, and Vite. It allows us
 
 ## Features
 
-Input date to create timer
-Displays countdown in days, hours, minutes, and seconds
-Dynamic update of countdown as time passes
-Responsive design for mobile and desktop devices
+- Input date to create timer
+- Displays countdown in days, hours, minutes, and seconds
+- Dynamic update of countdown as time passes
+- Responsive design for mobile and desktop devices
 
 ## Getting Started
 
@@ -18,9 +18,9 @@ Responsive design for mobile and desktop devices
 
 ## Built With
 
-React - JavaScript library for building user interfaces
-Styled Components - CSS-in-JS library for styling components
-Vite - Fast and lightweight development server for React apps
+- React - JavaScript library for building user interfaces
+- Styled Components - CSS-in-JS library for styling components
+- Vite - Fast and lightweight development server for React apps
 
 ## Author
 

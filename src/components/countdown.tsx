@@ -12,12 +12,9 @@ const renderTime = (name: string, time: number) => {
 };
 
 export const Countdown = ({ endDate }: { endDate: string }) => {
-  console.log(endDate);
   const startTime = Date.now() / 1000; // use UNIX timestamp in seconds
   const endTime = new Date(endDate).getTime() / 1000;
-  console.log(endTime);
 
-  // convert date time iso string to unix timestamp
   const remainingTime = endTime - startTime;
   const days = Math.ceil(remainingTime / daySeconds);
   const daysDuration = days * daySeconds;
